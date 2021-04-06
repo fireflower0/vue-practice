@@ -7,17 +7,21 @@
     <HeadLine h5 text='Home' />
     <HeadLine h6 text='Home' />
     <TextBox value='Hello, world!' />
+    <br />
+    <TextArea value='Hello, world!' />
   </div>
 </template>
 
 <script>
 import HeadLine from '../atoms/HeadLine.vue'
 import TextBox from '../atoms/TextBox.vue'
+import TextArea from '../atoms/TextArea.vue'
 
 export default {
   components: {
     HeadLine,
-    TextBox
+    TextBox,
+    TextArea
   }
 }
 </script>
