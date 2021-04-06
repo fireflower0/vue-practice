@@ -1,15 +1,22 @@
 <template>
   <div id='home'>
-    <h1>Home</h1>
+    <HeadLine h1 text='Home' />
+    <HeadLine h2 text='Home' />
+    <HeadLine h3 text='Home' />
+    <HeadLine h4 text='Home' />
+    <HeadLine h5 text='Home' />
+    <HeadLine h6 text='Home' />
     <TextBox value='Hello, world!' />
   </div>
 </template>
 
 <script>
+import HeadLine from '../atoms/HeadLine.vue'
 import TextBox from '../atoms/TextBox.vue'
 
 export default {
   components: {
+    HeadLine,
     TextBox
   }
 }
