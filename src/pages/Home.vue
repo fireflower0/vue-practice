@@ -6,14 +6,20 @@
     <HeadLine h4 text='Home' />
     <HeadLine h5 text='Home' />
     <HeadLine h6 text='Home' />
-    <TextBox value='Hello, world!' />
-    <br />
-    <TextArea placeholder='Sample' value='Hello, world!' />
+
+    <FieldSet labelText='TextBox'>
+      <TextBox value='Hello, world!' />
+    </FieldSet>
+
+    <FieldSet labelText='TextArea'>
+      <TextArea placeholder='Sample' value='Hello, world!' />
+    </FieldSet>
   </div>
 </template>
 
 <script>
 import HeadLine from '../atoms/HeadLine.vue'
+import FieldSet from '../atoms/FieldSet.vue'
 import TextBox from '../atoms/TextBox.vue'
 import TextArea from '../atoms/TextArea.vue'
 
@@ -21,7 +27,8 @@ export default {
   components: {
     HeadLine,
     TextBox,
-    TextArea
+    TextArea,
+    FieldSet
   }
 }
 </script>
