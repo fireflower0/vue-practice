@@ -1,12 +1,17 @@
 <template>
-  <textarea class='text' v-model='value' />
+  <textarea
+    class='text'
+    :value='value'
+    :placeholder='placeholder'
+  />
 </template>
 
 <script>
 export default {
   name: 'TextArea',
   props: {
-    value: String
+    value: String,
+    placeholder: String
   }
 }
 </script>

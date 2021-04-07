@@ -8,7 +8,7 @@
     <HeadLine h6 text='Home' />
     <TextBox value='Hello, world!' />
     <br />
-    <TextArea value='Hello, world!' />
+    <TextArea placeholder='Sample' value='Hello, world!' />
   </div>
 </template>
 
