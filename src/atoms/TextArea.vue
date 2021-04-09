@@ -1,23 +1,24 @@
 <template>
   <textarea
-    class='text'
+    class='textarea'
     :value='value'
-    :placeholder='placeholder'
+    @input='setValue'
   />
 </template>
 
 <script>
 export default {
   name: 'TextArea',
-  props: {
-    value: String,
-    placeholder: String
+  props: { value: String },
+  methods: {
+    setValue (e) { this.$emit('input', e.target.value) }
   }
 }
 </script>
 
 <style scoped>
-.text {
+.textarea {
+  margin: 5px;
   padding: 5px;
   border-radius: 3px;
   border: 1px solid #212121;

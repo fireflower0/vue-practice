@@ -7,12 +7,14 @@
     <HeadLine h5 text='Home' />
     <HeadLine h6 text='Home' />
 
-    <FieldSet labelText='TextBox'>
-      <TextBox value='Hello, world!' />
+   <FieldSet labelText='TextBox'>
+      <TextBox v-model='message1' placeholder='Edit Me' />
+      <p>Message is: {{ message1 }}</p>
     </FieldSet>
 
     <FieldSet labelText='TextArea'>
-      <TextArea placeholder='Sample' value='Hello, world!' />
+      <TextArea v-model='message2' placeholder='Edit Me' />
+      <p>Message is: {{ message2 }}</p>
     </FieldSet>
   </div>
 </template>
@@ -29,6 +31,12 @@ export default {
     TextBox,
     TextArea,
     FieldSet
+  },
+  data() {
+    return {
+      message1: 'Hello, Text Box !',
+      message2: 'Hello, Text Area !',
+    }
   }
 }
 </script>
