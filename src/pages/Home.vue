@@ -16,6 +16,11 @@
       <TextArea v-model='message2' placeholder='Edit Me' />
       <p>Message is: {{ message2 }}</p>
     </FieldSet>
+
+    <FieldSet labelText='Radio'>
+      <Radio v-model='selectedValue' :options='options' />
+      <p>Selected item is: {{ selectedValue }}</p>
+    </FieldSet>
   </div>
 </template>
 
@@ -24,18 +29,26 @@ import HeadLine from '../atoms/HeadLine.vue'
 import FieldSet from '../atoms/FieldSet.vue'
 import TextBox from '../atoms/TextBox.vue'
 import TextArea from '../atoms/TextArea.vue'
+import Radio from '../atoms/Radio.vue'
 
 export default {
   components: {
     HeadLine,
     TextBox,
     TextArea,
-    FieldSet
+    FieldSet,
+    Radio
   },
   data() {
     return {
       message1: 'Hello, Text Box !',
       message2: 'Hello, Text Area !',
+      selectedValue: 'orange',
+      options: [
+        { id: 0, groupName: 'fruits', checked: false, value: 'Apple' },
+        { id: 1, groupName: 'fruits', checked: true, value: 'Orange' },
+        { id: 2, groupName: 'fruits', checked: false, value: 'Grape' },
+      ]
     }
   }
 }
