@@ -2,12 +2,11 @@
   <div>
     <div class='form-wrapper' v-for='option in options' v-bind:key='option.id'>
       <input
-        type='radio'
+        type='checkbox'
         :id='option.id'
-        :name='option.groupName'
         :value='option.value'
-        :checked='option.value === selectedValue'
-        @change='setValue'
+        :checked='selectedValues.includes(option.value)'
+        @change='setValues'
       />
       <label :for='option.id'>{{ option.value }}</label>
     </div>
@@ -16,14 +15,21 @@
 
 <script>
 export default {
-  name: 'Radio',
+  name: 'CheckBox',
   props: {
     options: { type: Array, required: true },
-    selectedValue: String
+    selectedValues: Array
   },
   methods: {
-    setValue (e) {
-      this.$emit('input', e.target.value);
+    setValues (e) {
+      if (e.target.checked) {
+        this.$emit('input', this.selectedValues.concat(e.target.value));
+      } else {
+        this.$emit(
+          'input',
+          this.selectedValues.filter(v => v !== e.target.value)
+        );
+      }
     }
   }
 }
