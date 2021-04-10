@@ -3,11 +3,10 @@
     <div class='form-wrapper' v-for='option in options' v-bind:key='option.id'>
       <input
         type='radio'
-        v-model='option.checked'
         :id='option.id'
-        :checked='option.checked'
         :name='option.groupName'
         :value='option.value'
+        :checked='option.value === defaultValue'
         @change='setValue'
       />
       <label :for='option.id'>{{ option.value }}</label>
@@ -19,9 +18,8 @@
 export default {
   name: 'Radio',
   props: {
-    value: String,
-    name: String,
-    options: Array
+    options: { type: Array, required: true },
+    defaultValue: String
   },
   methods: {
     setValue (e) {

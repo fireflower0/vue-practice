@@ -18,7 +18,11 @@
     </FieldSet>
 
     <FieldSet labelText='Radio'>
-      <Radio v-model='selectedValue' :options='options' />
+      <Radio
+        v-model='selectedValue'
+        :options='options'
+        :defaultValue='selectedValue'
+      />
       <p>Selected item is: {{ selectedValue }}</p>
     </FieldSet>
   </div>
@@ -43,11 +47,11 @@ export default {
     return {
       message1: 'Hello, Text Box !',
       message2: 'Hello, Text Area !',
-      selectedValue: 'orange',
+      selectedValue: 'Orange',
       options: [
-        { id: 0, groupName: 'fruits', checked: false, value: 'Apple' },
-        { id: 1, groupName: 'fruits', checked: true, value: 'Orange' },
-        { id: 2, groupName: 'fruits', checked: false, value: 'Grape' },
+        { id: 0, groupName: 'fruits', value: 'Apple' },
+        { id: 1, groupName: 'fruits', value: 'Orange' },
+        { id: 2, groupName: 'fruits', value: 'Grape' },
       ]
     }
   }
