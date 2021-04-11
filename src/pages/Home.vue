@@ -34,6 +34,15 @@
       />
       <p>Selected items is: {{ selectedValues.join(', ') }} </p>
     </FieldSet>
+
+    <FieldSet labelText='Select'>
+      <Select
+        v-model='selectedItem'
+        :options='options3'
+        :selectedValue='selectedItem'
+      />
+      <p>Selected item is: {{ selectedItem }}</p>
+    </FieldSet>
   </div>
 </template>
 
@@ -44,6 +53,7 @@ import TextBox from '../atoms/TextBox.vue'
 import TextArea from '../atoms/TextArea.vue'
 import Radio from '../atoms/Radio.vue'
 import CheckBox from '../atoms/CheckBox.vue'
+import Select from '../atoms/Select.vue';
 
 export default {
   components: {
@@ -52,7 +62,8 @@ export default {
     TextArea,
     FieldSet,
     Radio,
-    CheckBox
+    CheckBox,
+    Select
   },
   data() {
     return {
@@ -69,7 +80,14 @@ export default {
         { id: 'checkbox-0', groupName: 'colors', value: 'Red' },
         { id: 'checkbox-1', groupName: 'colors', value: 'Green' },
         { id: 'checkbox-2', groupName: 'colors', value: 'Blue' },
-      ]
+      ],
+      options3: [
+        { id: 'typeA', value: 'A' },
+        { id: 'typeB', value: 'B' },
+        { id: 'typeO', value: 'O' },
+        { id: 'typeAB', value: 'AB' },
+      ],
+      selectedItem: 'O',
     }
   }
 }
