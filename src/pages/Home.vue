@@ -43,6 +43,11 @@
       />
       <p>Selected item is: {{ selectedItem }}</p>
     </FieldSet>
+
+    <FieldSet labelText='Date'>
+      <Date v-model='date' />
+      {{ date }}
+    </FieldSet>
   </div>
 </template>
 
@@ -54,6 +59,7 @@ import TextArea from '../atoms/TextArea.vue'
 import Radio from '../atoms/Radio.vue'
 import CheckBox from '../atoms/CheckBox.vue'
 import Select from '../atoms/Select.vue';
+import Date from '../atoms/Date.vue';
 
 export default {
   components: {
@@ -63,7 +69,8 @@ export default {
     FieldSet,
     Radio,
     CheckBox,
-    Select
+    Select,
+    Date
   },
   data() {
     return {
@@ -88,6 +95,7 @@ export default {
         { id: 'typeAB', value: 'AB' },
       ],
       selectedItem: 'O',
+      date: '2021-04-12',
     }
   }
 }
