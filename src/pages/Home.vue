@@ -48,6 +48,11 @@
       <Date v-model='date' />
       {{ date }}
     </FieldSet>
+
+    <FieldSet labelText='Time'>
+      <Time v-model='time' />
+      {{ time }}
+    </FieldSet>
   </div>
 </template>
 
@@ -60,6 +65,7 @@ import Radio from '../atoms/Radio.vue'
 import CheckBox from '../atoms/CheckBox.vue'
 import Select from '../atoms/Select.vue';
 import Date from '../atoms/Date.vue';
+import Time from '../atoms/Time.vue';
 
 export default {
   components: {
@@ -70,7 +76,8 @@ export default {
     Radio,
     CheckBox,
     Select,
-    Date
+    Date,
+    Time
   },
   data() {
     return {
@@ -96,6 +103,7 @@ export default {
       ],
       selectedItem: 'O',
       date: '2021-04-12',
+      time: '12:00'
     }
   }
 }
