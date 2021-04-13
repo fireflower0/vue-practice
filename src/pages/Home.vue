@@ -53,6 +53,11 @@
       <Time v-model='time' />
       {{ time }}
     </FieldSet>
+
+    <FieldSet labelText='Color'>
+      <Color v-model='color' />
+      {{ color }}
+    </FieldSet>
   </div>
 </template>
 
@@ -66,6 +71,7 @@ import CheckBox from '../atoms/CheckBox.vue'
 import Select from '../atoms/Select.vue';
 import Date from '../atoms/Date.vue';
 import Time from '../atoms/Time.vue';
+import Color from '../atoms/Color.vue';
 
 export default {
   components: {
@@ -77,7 +83,8 @@ export default {
     CheckBox,
     Select,
     Date,
-    Time
+    Time,
+    Color
   },
   data() {
     return {
@@ -103,7 +110,8 @@ export default {
       ],
       selectedItem: 'O',
       date: '2021-04-12',
-      time: '12:00'
+      time: '12:00',
+      color: '#e66465'
     }
   }
 }
