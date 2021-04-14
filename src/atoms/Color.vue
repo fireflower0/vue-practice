@@ -1,6 +1,6 @@
 <template>
   <input
-    class='textbox'
+    class='color'
     type='color'
     @input='setColor'
   />

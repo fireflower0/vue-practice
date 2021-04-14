@@ -58,6 +58,11 @@
       <Color v-model='color' />
       {{ color }}
     </FieldSet>
+
+    <FieldSet labelText='Range'>
+      <Range v-model='range' />
+      {{ range }}
+    </FieldSet>
   </div>
 </template>
 
@@ -72,6 +77,7 @@ import Select from '../atoms/Select.vue';
 import Date from '../atoms/Date.vue';
 import Time from '../atoms/Time.vue';
 import Color from '../atoms/Color.vue';
+import Range from '../atoms/Range.vue';
 
 export default {
   components: {
@@ -84,7 +90,8 @@ export default {
     Select,
     Date,
     Time,
-    Color
+    Color,
+    Range
   },
   data() {
     return {
@@ -111,7 +118,8 @@ export default {
       selectedItem: 'O',
       date: '2021-04-12',
       time: '12:00',
-      color: '#e66465'
+      color: '#e66465',
+      range: 75
     }
   }
 }
