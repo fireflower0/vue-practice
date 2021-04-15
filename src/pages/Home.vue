@@ -63,6 +63,10 @@
       <Range v-model='range' />
       {{ range }}
     </FieldSet>
+
+    <FieldSet labelText='Audio'>
+      <Audio :src='src' />
+    </FieldSet>
   </div>
 </template>
 
@@ -78,6 +82,7 @@ import Date from '../atoms/Date.vue';
 import Time from '../atoms/Time.vue';
 import Color from '../atoms/Color.vue';
 import Range from '../atoms/Range.vue';
+import Audio from '../atoms/Audio.vue';
 
 export default {
   components: {
@@ -91,7 +96,8 @@ export default {
     Date,
     Time,
     Color,
-    Range
+    Range,
+    Audio
   },
   data() {
     return {
@@ -119,7 +125,8 @@ export default {
       date: '2021-04-12',
       time: '12:00',
       color: '#e66465',
-      range: 75
+      range: 75,
+      src: ''
     }
   }
 }
