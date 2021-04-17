@@ -7,9 +7,14 @@
     <HeadLine h5 text='Home' />
     <HeadLine h6 text='Home' />
 
-   <FieldSet labelText='TextBox'>
+    <FieldSet labelText='TextBox'>
       <TextBox v-model='message1' placeholder='Edit Me' />
       <p>Message is: {{ message1 }}</p>
+    </FieldSet>
+
+    <FieldSet labelText='Number'>
+      <Number v-model='num' placeholder='Edit Me' />
+      <p>{{ num }}</p>
     </FieldSet>
 
     <FieldSet labelText='TextArea'>
@@ -83,6 +88,7 @@ import Time from '../atoms/Time.vue';
 import Color from '../atoms/Color.vue';
 import Range from '../atoms/Range.vue';
 import Audio from '../atoms/Audio.vue';
+import Number from '../atoms/Number.vue';
 
 export default {
   components: {
@@ -97,12 +103,14 @@ export default {
     Time,
     Color,
     Range,
-    Audio
+    Audio,
+    Number
   },
   data() {
     return {
       message1: 'Hello, Text Box !',
       message2: 'Hello, Text Area !',
+      num: 50,
       selectedValue: 'Orange',
       selectedValues: ['Blue'],
       options1: [
