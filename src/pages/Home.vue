@@ -17,6 +17,11 @@
       <p>{{ num }}</p>
     </FieldSet>
 
+    <FieldSet labelText='Search'>
+      <Search v-model='searchText' placeholder='Edit Me' />
+      <p>{{ searchText }}</p>
+    </FieldSet>
+
     <FieldSet labelText='TextArea'>
       <TextArea v-model='message2' placeholder='Edit Me' />
       <p>Message is: {{ message2 }}</p>
@@ -89,6 +94,7 @@ import Color from '../atoms/Color.vue';
 import Range from '../atoms/Range.vue';
 import Audio from '../atoms/Audio.vue';
 import Number from '../atoms/Number.vue';
+import Search from '../atoms/Search.vue';
 
 export default {
   components: {
@@ -104,13 +110,15 @@ export default {
     Color,
     Range,
     Audio,
-    Number
+    Number,
+    Search
   },
   data() {
     return {
       message1: 'Hello, Text Box !',
       message2: 'Hello, Text Area !',
       num: 50,
+      searchText: '',
       selectedValue: 'Orange',
       selectedValues: ['Blue'],
       options1: [
