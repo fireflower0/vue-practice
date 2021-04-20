@@ -7,6 +7,10 @@
     <HeadLine h5 text='Home' />
     <HeadLine h6 text='Home' />
 
+    <FieldSet labelText='Button'>
+      <Button labelText='Clicked!' :handleClick='onClick' />
+    </FieldSet>
+
     <FieldSet labelText='TextBox'>
       <TextBox v-model='message1' placeholder='Edit Me' />
       <p>Message is: {{ message1 }}</p>
@@ -83,6 +87,7 @@
 <script>
 import HeadLine from '../atoms/HeadLine.vue'
 import FieldSet from '../atoms/FieldSet.vue'
+import Button from '../atoms/Button.vue';
 import TextBox from '../atoms/TextBox.vue'
 import TextArea from '../atoms/TextArea.vue'
 import Radio from '../atoms/Radio.vue'
@@ -100,6 +105,7 @@ export default {
   components: {
     HeadLine,
     TextBox,
+    Button,
     TextArea,
     FieldSet,
     Radio,
@@ -115,6 +121,7 @@ export default {
   },
   data() {
     return {
+      text: '',
       message1: 'Hello, Text Box !',
       message2: 'Hello, Text Area !',
       num: 50,
@@ -143,6 +150,11 @@ export default {
       color: '#e66465',
       range: 75,
       src: ''
+    }
+  },
+  methods: {
+    onClick() {
+      console.log('Hello, world!')
     }
   }
 }

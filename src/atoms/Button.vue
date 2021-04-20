@@ -1,12 +1,15 @@
 <template>
-  <button class='button'>{{ labelText }}</button>
+  <button class='button' @click='handleClick' >
+    {{ labelText }}
+  </button>
 </template>
 
 <script>
 export default {
   name: 'Button',
   props: {
-    labelText: String
+    labelText: String,
+    handleClick: Function
   }
 }
 </script>
