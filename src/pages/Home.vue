@@ -8,7 +8,9 @@
     <HeadLine h6 text='Home' />
 
     <FieldSet labelText='Button'>
+      <TextBox v-model='text' />
       <Button labelText='Clicked!' :handleClick='onClick' />
+      {{ text }}
     </FieldSet>
 
     <FieldSet labelText='TextBox'>
@@ -154,7 +156,7 @@ export default {
   },
   methods: {
     onClick() {
-      console.log('Hello, world!')
+      this.text = 'Hello, world!';
     }
   }
 }
