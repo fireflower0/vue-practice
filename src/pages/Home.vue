@@ -9,7 +9,11 @@
 
     <FieldSet labelText='Button'>
       <TextBox v-model='text' />
-      <Button labelText='Clicked!' :handleClick='onClick' />
+      <Button
+        v-bind:style='{ color: btnTxtColor, backgroundColor: btnBkgColor }'
+        labelText='Clicked!'
+        :handleClick='onClick'
+      />
       {{ text }}
     </FieldSet>
 
@@ -151,7 +155,9 @@ export default {
       time: '12:00',
       color: '#e66465',
       range: 75,
-      src: ''
+      src: '',
+      btnTxtColor: '#FBE9E7',
+      btnBkgColor: '#DD2C00'
     }
   },
   methods: {
