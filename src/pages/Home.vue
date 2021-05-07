@@ -8,13 +8,19 @@
     <HeadLine h6 text='Home' />
 
     <FieldSet labelText='Button'>
-      <TextBox v-model='text' />
       <Button
-        v-bind:style='{ color: btnTxtColor, backgroundColor: btnBkgColor }'
-        labelText='Clicked!'
+        v-if="btnValue === 'Off'"
+        v-bind:style='{ color: btnTxtColor, backgroundColor: btnBkgColor1 }'
+        labelText='Off'
         :handleClick='onClick'
       />
-      {{ text }}
+      <Button
+        v-if="btnValue === 'On'"
+        v-bind:style='{ color: btnTxtColor, backgroundColor: btnBkgColor2 }'
+        labelText='On'
+        :handleClick='onClick'
+      />
+      {{ btnValue }}
     </FieldSet>
 
     <FieldSet labelText='TextBox'>
@@ -127,7 +133,7 @@ export default {
   },
   data() {
     return {
-      text: '',
+      btnValue: 'Off',
       message1: 'Hello, Text Box !',
       message2: 'Hello, Text Area !',
       num: 50,
@@ -157,12 +163,17 @@ export default {
       range: 75,
       src: '',
       btnTxtColor: '#FBE9E7',
-      btnBkgColor: '#DD2C00'
+      btnBkgColor1: '#DD2C00',
+      btnBkgColor2: '#00C853'
     }
   },
   methods: {
     onClick() {
-      this.text = 'Hello, world!';
+      if (this.btnValue === 'Off') {
+        this.btnValue = 'On';
+      } else {
+        this.btnValue = 'Off';
+      }
     }
   }
 }
